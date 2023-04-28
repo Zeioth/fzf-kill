@@ -3,6 +3,7 @@
 # https://github.com/gessen/zsh-fzf-kill/blob/master/fzf-kill.plugin.zsh
 # TODO: Align fzf to make it beautiful.
 # TODO: Refactor to make it more maintainable.
+# TODO: Make it run in any shell (portable)
 FZF_DEFAULT_OPTS="--min-height=100 --prompt 'kill -9 '"
 COLS_2_AND_8='{for(i=1;i<=NF;i++) if(i!=1 && i!=3 && i!=4 && i!=5 && i!=6 && i!=7) printf "%s ", $i; print ""}'
 
