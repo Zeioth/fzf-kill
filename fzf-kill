@@ -1,29 +1,87 @@
 #!/bin/bash
 # If you prefer a zsh keybinding check:
 # https://github.com/gessen/zsh-fzf-kill/blob/master/fzf-kill.plugin.zsh
-
+# TODO: Align fzf to make it beautiful.
+# TODO: Refactor to make it more maintainable.
 FZF_DEFAULT_OPTS="--min-height=100 --prompt 'kill -9 '"
 COLS_2_AND_8='{for(i=1;i<=NF;i++) if(i!=1 && i!=3 && i!=4 && i!=5 && i!=6 && i!=7) printf "%s ", $i; print ""}'
 
 
-# TODOS
-# ========================================
-# TODO: Align fzf to make it beautiful
-# TODO: USE "ps -p 802080 -o comm=" to extract the program name, 
-# instead of showing the full command (because we don't wanna list subprocesses)
-#
 # CODE
 # ========================================
 # List all user processes, extract the columns 2 and 8, delete the first line
 # order, eliminate repeated entries, send to fzf, and extract the first column
 # of the selectec entry.
-if [[ "${UID}" != "0" ]]; then
-  pid=$(ps -f -u ${UID} | awk "$COLS_2_AND_8" | sed 1d | sort | uniq | fzf -m | awk '{print $1}')
+
+detailed_mode(){
+  # Advanced mode (show subprocesses, if one is selected, parent is killed)
+  if [[ "${UID}" != "0" ]]; then
+    pid=$(ps -f -u ${UID} | \
+      awk "$COLS_2_AND_8" | \
+      sed 1d | \
+      sort | \
+      uniq | \
+      fzf -m | \
+      awk '{print $1}')
+  else
+    pid=$(ps -ef | \
+      awk "$COLS_2_AND_8" | \
+      sed 1d | \
+      sort | \
+      uniq | \
+      fzf -m | \
+      awk '{print $1}')
+  fi
+  echo $pid
+  if [[ "x$pid" != "x" ]]; then
+    # Kill the parent, no mater if child or parent is selected.
+    ps -o ppid $pid | sed 1d | xargs kill "-${1:-9}" > /dev/null 2>&1
+    kill -9 "$pid" > /dev/null 2>&1
+  fi
+}
+
+simple_mode(){
+  # Slower but more visually appealing.
+  # Simple mode (We only list parent processes)
+  if [[ "${UID}" != "0" ]]; then
+    pid=$(ps -f -u ${UID} | \
+      awk "$COLS_2_AND_8" | \
+      sed 1d | \
+      awk '{if($2 in seen){}else{seen[$2]=$0; print}}' | \
+      awk '{print $1}' | \
+      xargs -I{} sh -c 'echo -n {}; echo -n " "; ps -p {} -o comm=' | \
+      head -n -1 | \
+      sort | \
+      uniq | \
+      fzf -m | \
+      awk {'print $1'})
+  else
+    pid=$(ps -ef | \
+      awk "$COLS_2_AND_8" | \
+      sed 1d | \
+      sort | \
+      uniq | \
+      awk '{if($2 in seen){}else{seen[$2]=$0; print}}' | \
+      awk '{print $1}' | \
+      xargs -I{} sh -c 'echo -n {}; echo -n " "; ps -p {} -o comm=' | \
+      head -n -1 | \
+      sort | \
+      uniq | \
+      fzf -m | \
+      awk {'print $1'})
+  fi
+
+  if [[ "x$pid" != "x" ]]; then
+    # Kill the process
+    kill -9 "$pid"
+  fi
+}
+
+# Entry point of the program
+if [ "$1" == "--detailed" ]; then
+  detailed_mode
 else
-  pid=$(ps -ef | awk "$COLS_2_AND_8" | sed 1d | sort | uniq | fzf -m | awk '{print $1}')
+  simple_mode
 fi
 
-if [[ "x$pid" != "x" ]]; then
-  # Kill the parent process
-  ps -o ppid $pid | sed 1d | xargs kill "-${1:-9}"
-fi
+
