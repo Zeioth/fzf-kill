@@ -1,5 +1,6 @@
 # fzf-kill
-An easy to hack script to kill stuff. With fzf.
+An easy to hack script to kill stuff. 
+With fzf.
 
 ## How to install
 
