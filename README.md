@@ -1,9 +1,9 @@
-# fzf-kill
+# fzfkill
 An easy to hack script to kill stuff. 
 
 ## How to install
 
-yay -S fzf-kill
+yay -S fzfkill
 
 ![screenshot_2023-04-28_15-58-53_599674140](https://user-images.githubusercontent.com/3357792/235168109-e03498eb-ab84-434f-8d52-ddb826528007.png)
 
