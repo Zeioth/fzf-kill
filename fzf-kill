@@ -4,9 +4,9 @@
 
 FZF_DEFAULT_OPTS="--min-height=100 --prompt 'pkill -9 '"
 if [[ "${UID}" != "0" ]]; then
-  pid=$(ps -f -u ${UID} | awk '{print $8}' | sed 1d | sort | uniq | xargs -l basename | fzf -m)
+  pid=$(ps -f -u ${UID} | awk '{for(i=8;i<=NF;i++)printf "%s ", $i; print""}' | sed 1d | sort | uniq  | fzf -m)
 else
-  pid=$(ps -ef | awk '{print $8}' | sed 1d | sort | uniq | xargs -l basename | fzf -m)
+  pid=$(ps -ef | awk '{for(i=8;i<=NF;i++)printf "%s ", $i; print""}' | sed 1d | sort | uniq | fzf -m)
 fi
 
 if [[ "x$pid" != "x" ]]; then
