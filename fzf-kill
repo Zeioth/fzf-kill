@@ -42,8 +42,8 @@ detailed_mode(){
 }
 
 simple_mode(){
-  # Slower but more visually appealing.
   # Simple mode (We only list parent processes)
+  # (Slower but more visually appealing).
   if [[ "${UID}" != "0" ]]; then
     pid=$(ps -f -u ${UID} | \
       awk "$COLS_2_AND_8" | \
