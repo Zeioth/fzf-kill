@@ -2,6 +2,7 @@
 # If you prefer a zsh keybinding check:
 # https://github.com/gessen/zsh-fzf-kill/blob/master/fzf-kill.plugin.zsh
 
+FZF_DEFAULT_OPTS="--min-height=100 --prompt 'kill -9 '"
 if [[ "${UID}" != "0" ]]; then
   pid=$(ps -f -u ${UID} | sed 1d | fzf -m | awk '{print $2}')
 else
