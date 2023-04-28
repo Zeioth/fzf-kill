@@ -2,13 +2,16 @@
 # If you prefer a zsh keybinding check:
 # https://github.com/gessen/zsh-fzf-kill/blob/master/fzf-kill.plugin.zsh
 
-FZF_DEFAULT_OPTS="--min-height=100 --prompt 'pkill -9 '"
+FZF_DEFAULT_OPTS="--min-height=100 --prompt 'kill -9 '"
+COLS_2_AND_8='{for(i=1;i<=NF;i++) if(i!=1 && i!=3 && i!=4 && i!=5 && i!=6 && i!=7) printf "%s ", $i; print ""}'
+
+# TODO: Align fzf to make it beautiful
 if [[ "${UID}" != "0" ]]; then
-  pid=$(ps -f -u ${UID} | awk '{for(i=8;i<=NF;i++)printf "%s ", $i; print""}' | sed 1d | sort | uniq  | fzf -m)
+  pid=$(ps -f -u ${UID} | awk "$COLS_2_AND_8" | sed 1d | sort | uniq | fzf -m | awk '{print $1}')
 else
-  pid=$(ps -ef | awk '{for(i=8;i<=NF;i++)printf "%s ", $i; print""}' | sed 1d | sort | uniq | fzf -m)
+  pid=$(ps -ef | awk "$COLS_2_AND_8" | sed 1d | sort | uniq | fzf -m | awk '{print $1}')
 fi
 
 if [[ "x$pid" != "x" ]]; then
-  echo $pid | xargs pkill "-${1:-9}"
+  echo $pid | xargs kill "-${1:-9}"
 fi
