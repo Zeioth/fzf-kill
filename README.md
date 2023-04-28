@@ -5,6 +5,8 @@ An easy to hack script to kill stuff.
 
     yay -S fzf-kill
 
+Or manually put the file into ~/.local/bin/fzf-kill
+
 ## How to use
 
 run it like
@@ -12,10 +14,9 @@ run it like
     fzf-kill
 or
 
-    # This mode is slightly faster
+    # More cluttered, but also faster.
     fzf-kill --detailed
 
-Or manually put the file into ~/.local/bin/fzf-kill
 ![screenshot_2023-04-28_21-53-54_742158876](https://user-images.githubusercontent.com/3357792/235240651-2d20db69-88f8-410e-aca2-d40e34934068.png)
 
 ## Disclaimer
