@@ -1,5 +1,5 @@
 # fzf-kill
-Simple hackable script to kill stuff
+An easy to hack script to kill stuff
 
 ## How to install
 
