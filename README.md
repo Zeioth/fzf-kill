@@ -25,8 +25,8 @@ This will print
 
 ```
 HELP:
- * --parents:         Show only parent processes. (default)
- * --all:             Show both parent and children processes.
+ * --parents          Show only parent processes. (default)
+ * --all              Show both parent and children processes.
 
 
  # ADVANCED OPTIONS
@@ -38,7 +38,7 @@ HELP:
                       You can also pipe it from a file like
                       fzf-kill --exclude=$(cat ~/.config/fzf-kill/my_excludes.txt)
 
-* --loop:             The program will stay open even after killing a program.
+* --loop              The program will stay open even after killing a program.
 
 
  * --fzf_default_ops  You can  use it to override the env var FZF_DEFAULT_OPTS.
