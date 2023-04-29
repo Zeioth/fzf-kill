@@ -17,10 +17,9 @@ Detailed mode
 
     fzf-kill --all
 
-You can see the help with
+You can see the help and other advanced commands with
 
     fzf-kill --help
-
 
 ![screenshot_2023-04-28_21-53-54_742158876](https://user-images.githubusercontent.com/3357792/235240651-2d20db69-88f8-410e-aca2-d40e34934068.png)
 
