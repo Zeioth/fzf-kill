@@ -9,13 +9,15 @@ Or manually put the file into ~/.local/bin/fzf-kill
 
 ## How to use
 
-run it like
-
+run it in simple or verbose mode with
+    
     fzf-kill
-or
+    fzf-kill --all
 
-    # More cluttered, but also faster.
-    fzf-kill --detailed
+You can see the help with
+
+    fzf-kill --help
+
 
 ![screenshot_2023-04-28_21-53-54_742158876](https://user-images.githubusercontent.com/3357792/235240651-2d20db69-88f8-410e-aca2-d40e34934068.png)
 
