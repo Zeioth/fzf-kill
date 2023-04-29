@@ -17,9 +17,43 @@ Detailed mode
 
     fzf-kill --all
 
-You can see the help and other advanced commands with
+You can see the help with
 
     fzf-kill --help
+
+That will print
+
+```
+HELP:
+ * --parents:         Show only parent processes. (default)
+ * --all:             Show both parent and children processes.
+
+
+ # ADVANCED OPTIONS
+ * --exclude          You can exclude a list of programs from appearing on the list.
+                      
+                      Use it like:
+                      fzf-kill --exclude='word1|word2|word2'
+
+                      You can also pipe it from a file like
+                      fzf-kill --exclude=$(cat ~/.config/fzf-kill/my_excludes.txt)
+
+* --loop:             The program will stay open even after killing a program.
+
+
+ * --fzf_default_ops  You can  use it to override the env var FZF_DEFAULT_OPTS.
+                     
+                      Use it like:
+                      fzf-kill --fzf_default_ops=--min-height=100 --prompt kill -9 
+
+* --showroot          List both root and user processes running in the session.
+                      By default is disabled. Meaning by default we show only 
+                      processes owned by the user. 
+
+                      Plese note that this option won't let you kill anything
+                      launced by root unless you are root, or run fzf-kill with
+                      sudo privileges (which by general rule, you shouldn't).
+```
 
 ![screenshot_2023-04-28_21-53-54_742158876](https://user-images.githubusercontent.com/3357792/235240651-2d20db69-88f8-410e-aca2-d40e34934068.png)
 
