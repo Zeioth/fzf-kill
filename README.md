@@ -13,9 +13,8 @@ Simple mode
     
     fzf-kill
 
-Advanced mode
+Detailed mode
 
-    #s how both parent and children processes
     fzf-kill --all
 
 You can see the help with
