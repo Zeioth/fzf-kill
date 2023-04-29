@@ -21,7 +21,7 @@ You can see the help with
 
     fzf-kill --help
 
-That will print
+This will print
 
 ```
 HELP:
