@@ -29,6 +29,7 @@ HELP:
  without the cluttered user experience, 
  or the uncomfortable keybindings of other task killers.
  
+ 
  # BASIC COMMANDS
  * --parents           Show only parent processes. (default)
  * --all               Show both parent and children processes.
