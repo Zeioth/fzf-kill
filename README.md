@@ -9,9 +9,13 @@ Or manually put the file into ~/.local/bin/fzf-kill
 
 ## How to use
 
-run it in simple or verbose mode with
+Simple mode
     
     fzf-kill
+
+Advanced mode
+
+    #s how both parent and children processes
     fzf-kill --all
 
 You can see the help with
