@@ -152,7 +152,7 @@ echo "HELP:
                        Use it like:
                        fzf-kill --exclude='word1|word2|word2'
  
-                       You can also pipe it from a file like
+                       You can also pipe it from a file like:
                        fzf-kill --exclude="'$(cat ~/.config/fzf-kill/my_excludes.txt)'"
  
  * --loop              The program will stay open even after killing a program.
