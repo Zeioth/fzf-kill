@@ -25,6 +25,10 @@ This will print
 
 ```
 HELP:
+ fzf-kill allow you to kill your programs in a quick and intuitive way
+ without the cluttered user experience, 
+ or the uncomfortable keybindings of other task killers.
+ 
  # BASIC COMMANDS
  * --parents           Show only parent processes. (default)
  * --all               Show both parent and children processes.
