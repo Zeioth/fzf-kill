@@ -57,7 +57,7 @@ HELP:
                        processes owned by the user. 
                        
                        Plese note that this option won't let you kill anything
-                       launced by root unless you are root, or run fzf-kill with
+                       launched by root unless you are root, or run fzf-kill with
                        sudo privileges (which by general rule, you shouldn't).
 ```
 
