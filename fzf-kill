@@ -26,7 +26,7 @@ for arg in "$@"; do
     LOOP_MODE="true"
   fi
 
-# Check if the argument contains the "exclude=" string
+  # Check if the argument contains the "exclude=" string
   if echo "$arg" | grep -q "exclude="; then
     # Use cut to extract everything after the "=" symbol
     EXCLUDE_LIST=$(echo "$arg" | cut -d= -f2-)
