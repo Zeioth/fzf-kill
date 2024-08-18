@@ -64,7 +64,7 @@ HELP:
 ![screenshot_2023-04-28_21-53-54_742158876](https://user-images.githubusercontent.com/3357792/235240651-2d20db69-88f8-410e-aca2-d40e34934068.png)
 
 ## Disclaimer
-This is a (not so) simple script. I upload it in case you need to cover this case of use ASAP, but I encourage you to read the code, fork it, and adapt it to your needs.
+This is a kinda simple script. I upload it in case you need to cover this case of use ASAP, but I encourage you to read the code, fork it, and adapt it to your needs.
 
 # PRs and more
 Mostly bugfixes will be accepted. I'm opened to ideas about possible improvements, but take into condideration this program has two main goals: 
