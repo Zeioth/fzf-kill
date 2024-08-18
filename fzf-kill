@@ -166,7 +166,7 @@ echo "HELP:
  * --fzf_default_ops   You can  use it to override the env var FZF_DEFAULT_OPTS.
                        
                        Use it like:
-                       fzf-kill --fzf_default_ops="--min-height=100 --prompt 'kill -9 '"
+                       fzf-kill --fzf_default_ops=\"--min-height=100 --prompt 'kill -9 '\"
                        
  * --showroot          List both root and user processes running in the session.
                        By default is disabled. Meaning by default we show only 
