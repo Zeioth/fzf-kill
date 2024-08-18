@@ -1,6 +1,8 @@
 # fzf-kill
 An easy to hack script to kill stuff. 
 
+![screenshot_2023-04-28_21-53-54_742158876](https://user-images.githubusercontent.com/3357792/235240651-2d20db69-88f8-410e-aca2-d40e34934068.png)
+
 ## How to install
 
     yay -S fzf-kill
@@ -60,8 +62,6 @@ HELP:
                        launched by root unless you are root, or run fzf-kill with
                        sudo privileges (which by general rule, you shouldn't).
 ```
-
-![screenshot_2023-04-28_21-53-54_742158876](https://user-images.githubusercontent.com/3357792/235240651-2d20db69-88f8-410e-aca2-d40e34934068.png)
 
 ## Disclaimer
 This is a kinda simple script. I upload it in case you need to cover this case of use ASAP, but I encourage you to read the code, fork it, and adapt it to your needs.
