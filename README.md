@@ -1,5 +1,5 @@
 # fzf-kill
-An easy to hack script to kill stuff. 
+The no-nonsense task killer for your terminal.
 
 ![screenshot_2023-04-28_21-53-54_742158876](https://user-images.githubusercontent.com/3357792/235240651-2d20db69-88f8-410e-aca2-d40e34934068.png)
 
