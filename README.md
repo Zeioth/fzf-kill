@@ -66,7 +66,7 @@ HELP:
 ## Disclaimer
 This is a kinda simple script. I upload it in case you need to cover this case of use ASAP, but I encourage you to read the code, fork it, and adapt it to your needs.
 
-# PRs and more
+## PRs and more
 Mostly bugfixes will be accepted. I'm opened to ideas about possible improvements, but take into condideration this program has two main goals: 
 
 * Covering the very specific case of use of killing stuff fast and user friendly, while using super low resources. (Nice program for a keybinding, for example).
