@@ -58,7 +58,7 @@ HELP:
                        By default is disabled. Meaning by default we show only 
                        processes owned by the user. 
                        
-                       Plese note that this option won't let you kill anything
+                       Please note that this option won't let you kill anything
                        launched by root unless you are root, or run fzf-kill with
                        sudo privileges (which by general rule, you shouldn't).
 ```
