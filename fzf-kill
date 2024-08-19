@@ -53,7 +53,7 @@ for arg in "$@"; do
 done
 
 
-# METHODS
+# FUNCTIONS
 # ========================================================
 
 # CONSTANTS
