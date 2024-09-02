@@ -14,7 +14,7 @@ Or manually put the file into ~/.local/bin/fzf-kill
 * Write the name of the process you want to kill and press ENTER.
 * That's it, there is not third step.
 
-## How to use (advances)
+## How to use (advanced)
 Simple mode
     
     fzf-kill
