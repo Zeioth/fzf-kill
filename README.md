@@ -10,7 +10,11 @@ The no-nonsense task killer for your terminal.
 Or manually put the file into ~/.local/bin/fzf-kill
 
 ## How to use
+* Open the program with `fzf-kill`.
+* Write the name of the process you want to kill and press ENTER.
+* That's it, there is not third step.
 
+## How to use (advances)
 Simple mode
     
     fzf-kill
